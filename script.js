@@ -16,12 +16,13 @@ const saved = localStorage.getItem(KEY) || 'dark';
 root.setAttribute('data-theme', saved);
 toggle.textContent = saved === 'dark' ? '🌙' : '☀️';
 
-/* Toggle */
+/* Toggle theme */
 toggle.addEventListener('click', () => {
-  const isDark = root.getAttribute('data-theme') === 'dark';
-  const next = isDark ? 'light' : 'dark';
+  const next =
+    root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
 
   root.setAttribute('data-theme', next);
   toggle.textContent = next === 'dark' ? '🌙' : '☀️';
   localStorage.setItem(KEY, next);
 });
+
