@@ -57,7 +57,6 @@ body {
 
 .nav-links a:hover { color: #fff; }
 
-/* THEME TOGGLE */
 .theme-toggle {
   margin-left: 32px;
   background: none;
@@ -82,8 +81,9 @@ body {
 }
 
 .hero h1 {
+  font-family: 'Newsreader', serif;
   font-size: clamp(4.5rem, 10vw, 8rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 0.95;
   margin: 0;
 }
@@ -155,4 +155,5 @@ body {
 @media (max-width: 768px) {
   .nav-links { display: none; }
 }
+
 
