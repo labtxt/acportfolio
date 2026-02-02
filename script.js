@@ -1,0 +1,27 @@
+const header = document.querySelector('.header');
+const toggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const KEY = 'theme';
+
+/* Header scroll */
+window.addEventListener('scroll', () => {
+  header.style.background =
+    window.scrollY > 60
+      ? 'rgba(15,15,15,0.95)'
+      : 'rgba(15,15,15,0.85)';
+});
+
+/* Init theme */
+const saved = localStorage.getItem(KEY) || 'dark';
+root.setAttribute('data-theme', saved);
+toggle.textContent = saved === 'dark' ? '🌙' : '☀️';
+
+/* Toggle */
+toggle.addEventListener('click', () => {
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  const next = isDark ? 'light' : 'dark';
+
+  root.setAttribute('data-theme', next);
+  toggle.textContent = next === 'dark' ? '🌙' : '☀️';
+  localStorage.setItem(KEY, next);
+});
